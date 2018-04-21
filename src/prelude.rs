@@ -8,7 +8,7 @@ pub use shred::{Dispatcher, DispatcherBuilder, Read, ReadExpect, RunNow, System,
                 Write, WriteExpect};
 pub use shrev::ReaderId;
 
-#[cfg(not(target_os = "emscripten"))]
+#[cfg(feature = "parallel")]
 pub use shred::AsyncDispatcher;
 
 pub use changeset::ChangeSet;
